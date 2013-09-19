@@ -43,7 +43,7 @@ static CBigNum bnInitialHashTarget(~uint256(0) >> 20);
 unsigned int nStakeMinAge = 60 * 60 * 24 * 365; // minimum age for coin age
 unsigned int nStakeMaxAge = 60 * 60 * 24 * 730; // stake age of full weight
 unsigned int nStakeTargetSpacing = 32; //  32 second block spacing
-int64 nChainStartTime = 1379573235;
+int64 nChainStartTime = 1379622160;
 int nCoinbaseMaturity = 100;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2608,14 +2608,14 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis Block:
-        // CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
-        //   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
-        //     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
-        //     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
-        //   vMerkleTree: 4a5e1e
+        //CBlock(hash=00000f74126c4507e35c, ver=1, hashPrevBlock=00000000000000000000, hashMerkleRoot=05b4eb8ba8, nTime=1379622200, nBits=1e0fffff, nNonce=549784, vtx=1, vchBlockSig=)
+  //Coinbase(hash=05b4eb8ba8, nTime=1379622160, ver=1, vin.size=1, vout.size=1, nLockTime=0)
+    //CTxIn(COutPoint(0000000000, 4294967295), coinbase 04ffff001d020f271c4c6f7474657279205469636b6574204861766520417272697665642e)
+    //CTxOut(empty)
+  //vMerkleTree: 05b4eb8ba8 
 
         // Genesis block
-        const char* pszTimestamp = "Lottery Ticket Sales are finally Opened.";
+        const char* pszTimestamp = "Lottery Ticket Have Arrived.";
         CTransaction txNew;
         txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -2629,9 +2629,9 @@ bool LoadBlockIndex(bool fAllowNew)
         block.nVersion = 1;
         block.nTime    = nChainStartTime + 40;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 402877;
+        block.nNonce   = 549784 ;
 
- 	   if (true && (block.GetHash() != hashGenesisBlock)) {
+ 	   if (false && (block.GetHash() != hashGenesisBlock)) {
 
 		// This will figure out a valid hash and Nonce if you're
 		// creating a different genesis block:
@@ -2651,7 +2651,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.GetHash() == %s\n", block.GetHash().ToString().c_str());
         printf("block.hashMerkleRoot == %s\n", block.hashMerkleRoot.ToString().c_str());
         printf("block.nNonce = %u \n", block.nNonce);
-        assert(block.hashMerkleRoot == uint256("0xf1b6d2ee8e9af665cb72b58a8b6dbfb7acc0307cc1513bdf6148b04f73c753cd"));
+        assert(block.hashMerkleRoot == uint256("0x05b4eb8ba8355f45dcf3f636f34e5d07bc5aa4fbf46542b5c0f318c4638a1ce6"));
         block.print();
 
         assert(block.GetHash() == hashGenesisBlock);
