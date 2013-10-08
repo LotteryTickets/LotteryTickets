@@ -1,4 +1,4 @@
-IDI_ICON1 ICON DISCARDABLE "icons/copperbars.ico"
+IDI_ICON1 ICON DISCARDABLE "icons/LotteryTickets.ico"
 
 #include <windows.h>             // needed for VERSIONINFO
 #include "../../clientversion.h" // holds the needed client version information
@@ -18,14 +18,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "CopperBars"
-            VALUE "FileDescription",    "CopperBars-Qt (OSS GUI client for CopperBars)"
+            VALUE "CompanyName",        "LotteryTickets"
+            VALUE "FileDescription",    "LotteryTickets-Qt (OSS GUI client for LotteryTickets)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "copperbars-qt"
-            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The NovaCoin & PPCoin developers, 2013 The CopperBars developers."
+            VALUE "InternalName",       "LotteryTickets-qt"
+            VALUE "LegalCopyright",     "2009-2012 The Bitcoin developers, 2012-2013 The NovaCoin & PPCoin developers, 2013 The LotteryTickets developers."
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "copperbars-qt.exe"
-            VALUE "ProductName",        "CopperBars-Qt"
+            VALUE "OriginalFilename",   "LotteryTickets-qt.exe"
+            VALUE "ProductName",        "LotteryTickets-Qt"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
